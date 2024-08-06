@@ -3071,7 +3071,76 @@ namespace TRSWordAddIn
 
         private void button11_Click(object sender, RibbonControlEventArgs e)
         {
+            AddJobInformation();
+        }
 
+        private void AddJobInformation()
+        {
+            this.collate_url = ConfigurationManager.AppSettings["ServerUrl"] + "api/collate/text";
+            this.login_url = ConfigurationManager.AppSettings["ServerUrl"] + "api/login";
+            this.login_username = ConfigurationManager.AppSettings["username"];
+            this.login_code = ConfigurationManager.AppSettings["code"];
+
+            string cstring = Utils.URLCheck.CheckUrl(this.login_url);
+            if (cstring.Length == 0)
+            {
+                bool is_login = backgroundLogIn();
+                if (is_login)
+                {
+                    //添加新错误记录
+                    String text = Globals.ThisAddIn.Application.Selection.Text;
+                    if (text != null)
+                    {
+                        Form_AddRight form = new Form_AddRight(this, text, this.token);
+                        form.ShowDialog();
+                    }
+                }
+                else
+                {
+                    FormLogIn();
+                }
+            }
+            else
+            {
+                MessageBox.Show(cstring);
+            }
+        }
+
+        private void button12_Click(object sender, RibbonControlEventArgs e)
+        {
+            AddTerminology();
+        }
+
+        private void AddTerminology()
+        {
+            this.collate_url = ConfigurationManager.AppSettings["ServerUrl"] + "api/collate/text";
+            this.login_url = ConfigurationManager.AppSettings["ServerUrl"] + "api/login";
+            this.login_username = ConfigurationManager.AppSettings["username"];
+            this.login_code = ConfigurationManager.AppSettings["code"];
+
+            string cstring = Utils.URLCheck.CheckUrl(this.login_url);
+            if (cstring.Length == 0)
+            {
+                bool is_login = backgroundLogIn();
+                if (is_login)
+                {
+                    //添加新错误记录
+                    String text = Globals.ThisAddIn.Application.Selection.Text;
+                    if (text != null)
+                    {
+                        Form_AddRight form = new Form_AddRight(this, text, this.token);
+                        form.ShowDialog();
+                    }
+                }
+                else
+                {
+                    FormLogIn();
+                }
+            }
+            else
+            {
+                MessageBox.Show(cstring);
+            }
         }
     }
 

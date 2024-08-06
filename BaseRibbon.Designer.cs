@@ -51,6 +51,8 @@
             this.box3 = this.Factory.CreateRibbonBox();
             this.button6 = this.Factory.CreateRibbonButton();
             this.button3 = this.Factory.CreateRibbonButton();
+            this.button11 = this.Factory.CreateRibbonButton();
+            this.button12 = this.Factory.CreateRibbonButton();
             this.group3 = this.Factory.CreateRibbonGroup();
             this.button9 = this.Factory.CreateRibbonButton();
             this.button10 = this.Factory.CreateRibbonButton();
@@ -61,8 +63,6 @@
             this.box1 = this.Factory.CreateRibbonBox();
             this.button_outResult = this.Factory.CreateRibbonButton();
             this.button_version = this.Factory.CreateRibbonButton();
-            this.button11 = this.Factory.CreateRibbonButton();
-            this.button12 = this.Factory.CreateRibbonButton();
             this.tab2.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -215,6 +215,24 @@
             this.button3.ShowImage = true;
             this.button3.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button3_Click);
             // 
+            // button11
+            // 
+            this.button11.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
+            this.button11.Label = "添加职务信息";
+            this.button11.Name = "button11";
+            this.button11.ShowImage = true;
+            this.button11.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button11_Click);
+            // 
+            // button12
+            // 
+            this.button12.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
+            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button12.Image")));
+            this.button12.Label = "添加专业术语";
+            this.button12.Name = "button12";
+            this.button12.ShowImage = true;
+            this.button12.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button12_Click);
+            // 
             // group3
             // 
             this.group3.Items.Add(this.button9);
@@ -292,23 +310,6 @@
             this.button_version.Name = "button_version";
             this.button_version.ShowImage = true;
             this.button_version.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button_version_Click);
-            // 
-            // button11
-            // 
-            this.button11.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button11.Label = "添加职务信息";
-            this.button11.Name = "button11";
-            this.button11.ShowImage = true;
-            this.button11.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.button11_Click);
-            // 
-            // button12
-            // 
-            this.button12.ControlSize = Microsoft.Office.Core.RibbonControlSize.RibbonControlSizeLarge;
-            this.button12.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button12.Label = "添加专业术语";
-            this.button12.Name = "button12";
-            this.button12.ShowImage = true;
             // 
             // BaseRibbon
             // 
